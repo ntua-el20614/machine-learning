@@ -1,0 +1,57 @@
+#gia to EDA edw, tha asxolithume mono me to arxeio train-val.csv:
+# 2a
+print("Ερώτημα 2α:")
+num_samples, num_features = df.shape
+print("Τα δείγματα απο το αρχείο train-val.csv είναι: %d"%num_samples)#disdiastatos pinakas me ta stixeia (deigmata)
+print("Με %d χαρακτηριστικά το κάθε δείγμα"%num_features,end="\n\n")#pleon exw ta onomata tou kathe column (xaraktiristika)
+
+# 2b
+print("Ερώτημα 2β:")
+data_types = df.dtypes
+print("Το είδος του κάθε χαρακτηριστικού:")
+print(data_types,end="\n\n")
+
+# 2c
+print("Ερώτημα 2γ:")
+attribute_labels = df.columns
+print("Οι ετικέτες των χαρακτηριστικών:")
+print(attribute_labels,end="\n\n")
+
+# 2d
+print("Ερώτημα 2δ:")
+num_categories = df.nunique()
+print("Το πλήθος των κατηγοριών:")
+print(num_categories,end="\n\n")
+
+# 2e
+print("Ερώτημα 2ε:")
+for i in labels_weather:
+    try:
+        if df[i].dtype == object:
+            category_counts = df[i].value_counts()
+            print("Δείγματα που ανήκουν στην κατηγορία %s:\n%s" % (i, category_counts))
+        else:
+            continue #agnow ta columns pou den einai katogories
+    except:
+        continue #se periptosi pou petaksei error apla agnow ekeini tin stili
+    print()
+
+# 2στ
+print("Ερώτημα 2στ:")
+correlation_matrix = df.corr()
+print("Συσχέτιση μεταξύ των δεδομένων:")
+print(correlation_matrix)
+
+# 2ζ
+print("Ερώτημα 2ζ:")
+print("Επιλέγω να παρουσιάσω πόσες τιμές λείπουν απο την κάθε κατηγορία:")
+missing_values = df.isnull().sum()
+print(missing_values)
+
+print("Παρουσιάζω επίσης την κατανομή των μέγιστων θερμοκρασιών:")
+
+import matplotlib.pyplot as plt
+df['MaxTemp'].plot.hist(bins=20)
+plt.xlabel("Max Temperature")
+plt.title("Κατανομή μέγιστης θερμοκρασίας")
+plt.show()

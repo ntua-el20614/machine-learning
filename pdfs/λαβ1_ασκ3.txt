@@ -1,0 +1,6 @@
+3.c. Write code to properly convert categorical variables so that the classifiers you will use can handle them.
+3.δ. Write code for the scaling of attributes, if you consider it necessary
+3.ε. Perform all the previous pre-training step (use transformers) so that the initial set is "clean" to be used for training the classifiers.
+3.f. After you have "cleaned" the initial training set, write the appropriate code to generate the sets x and y from the initial training set.
+The column 'RainTomorrow' is the value we want our classifier to predict.
+3.ζ. Split the dataset into a training set (train set) and a validation set (validation set) (the split to be train set 70% and validation set 30%).
